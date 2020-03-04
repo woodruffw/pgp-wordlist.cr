@@ -1,5 +1,7 @@
 # pgp-wordlist
 
+[![Build Status](https://img.shields.io/github/workflow/status/woodruffw/pgp-wordlist.cr/CI/master)](https://github.com/woodruffw/pgp-wordlist.cr/actions?query=workflow%3ACI)
+
 A simple library for converting sequences of bytes into unambiguous English words.
 
 Uses the "official" word list: <https://philzimmermann.com/docs/PGP_word_list.pdf>
