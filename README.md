@@ -1,4 +1,5 @@
-# pgp-wordlist
+pgp-wordlist.cr
+===============
 
 [![Build Status](https://img.shields.io/github/workflow/status/woodruffw/pgp-wordlist.cr/CI/master)](https://github.com/woodruffw/pgp-wordlist.cr/actions?query=workflow%3ACI)
 
