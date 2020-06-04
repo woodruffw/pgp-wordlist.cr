@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.33.0">
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+
+  <meta id="repository-name" content="github.com/woodruffw/pgp-wordlist.cr">
+  <title>PGP::Wordlist - github.com/woodruffw/pgp-wordlist.cr</title>
+  <script type="text/javascript">
+    CrystalDoc.base_path = "../";
+  </script>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="../index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="github.com/woodruffw/pgp-wordlist.cr/PGP" data-name="pgp">
+      <a href="../PGP.html">PGP</a>
+      
+        <ul>
+  
+  <li class=" current" data-id="github.com/woodruffw/pgp-wordlist.cr/PGP/Wordlist" data-name="pgp::wordlist">
+      <a href="../PGP/Wordlist.html">Wordlist</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">module</span> PGP::Wordlist
+
+</h1>
+
+
+
+
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>A simple library for converting sequences of bytes into unambiguous English words.</p>
+
+<p>Uses the "official" word list: https://philzimmermann.com/docs/PGP_word_list.pdf</p>
+
+<pre><code><span class="k">require</span> <span class="s">&quot;pgp-wordlist&quot;</span>
+
+<span class="t">PGP</span><span class="t">::</span><span class="t">Wordlist</span>.from_hexstring <span class="s">&quot;0123 cdef&quot;</span> <span class="c"># =&gt; &quot;absurd cannonball spindle unravel&quot;</span>
+
+bytes <span class="o">=</span> [<span class="n">0xfe_u8</span>, <span class="n">0xed_u8</span>, <span class="n">0xfa_u8</span>, <span class="n">0xce_u8</span>]
+<span class="t">PGP</span><span class="t">::</span><span class="t">Wordlist</span>.from_bytes bytes <span class="c"># =&gt; &quot;woodlark unify wallet sardonic&quot;</span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/woodruffw/pgp-wordlist.cr/blob/51a13fa33702d29d3b8e606d7eb80b396ea06f07/src/pgp-wordlist/version.cr#L1" target="_blank">
+        pgp-wordlist/version.cr
+      </a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/woodruffw/pgp-wordlist.cr/blob/51a13fa33702d29d3b8e606d7eb80b396ea06f07/src/pgp-wordlist.cr#L15" target="_blank">
+        pgp-wordlist.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>
+      <a id="constant-summary" class="anchor" href="#constant-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+      Constant Summary
+    </h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="VERSION">
+        <strong>VERSION</strong> = <code><span class="s">&quot;0.1.0&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="WORD_LIST">
+        <strong>WORD_LIST</strong> = <code>[[<span class="s">&quot;aardvark&quot;</span>, <span class="s">&quot;adroitness&quot;</span>], [<span class="s">&quot;absurd&quot;</span>, <span class="s">&quot;adviser&quot;</span>], [<span class="s">&quot;accrue&quot;</span>, <span class="s">&quot;aftermath&quot;</span>], [<span class="s">&quot;acme&quot;</span>, <span class="s">&quot;aggregate&quot;</span>], [<span class="s">&quot;adrift&quot;</span>, <span class="s">&quot;alkali&quot;</span>], [<span class="s">&quot;adult&quot;</span>, <span class="s">&quot;almighty&quot;</span>], [<span class="s">&quot;afflict&quot;</span>, <span class="s">&quot;amulet&quot;</span>], [<span class="s">&quot;ahead&quot;</span>, <span class="s">&quot;amusement&quot;</span>], [<span class="s">&quot;aimless&quot;</span>, <span class="s">&quot;antenna&quot;</span>], [<span class="s">&quot;Algol&quot;</span>, <span class="s">&quot;applicant&quot;</span>], [<span class="s">&quot;allow&quot;</span>, <span class="s">&quot;Apollo&quot;</span>], [<span class="s">&quot;alone&quot;</span>, <span class="s">&quot;armistice&quot;</span>], [<span class="s">&quot;ammo&quot;</span>, <span class="s">&quot;article&quot;</span>], [<span class="s">&quot;ancient&quot;</span>, <span class="s">&quot;asteroid&quot;</span>], [<span class="s">&quot;apple&quot;</span>, <span class="s">&quot;Atlantic&quot;</span>], [<span class="s">&quot;artist&quot;</span>, <span class="s">&quot;atmosphere&quot;</span>], [<span class="s">&quot;assume&quot;</span>, <span class="s">&quot;autopsy&quot;</span>], [<span class="s">&quot;Athens&quot;</span>, <span class="s">&quot;Babylon&quot;</span>], [<span class="s">&quot;atlas&quot;</span>, <span class="s">&quot;backwater&quot;</span>], [<span class="s">&quot;Aztec&quot;</span>, <span class="s">&quot;barbecue&quot;</span>], [<span class="s">&quot;baboon&quot;</span>, <span class="s">&quot;belowground&quot;</span>], [<span class="s">&quot;backfield&quot;</span>, <span class="s">&quot;bifocals&quot;</span>], [<span class="s">&quot;backward&quot;</span>, <span class="s">&quot;bodyguard&quot;</span>], [<span class="s">&quot;banjo&quot;</span>, <span class="s">&quot;bookseller&quot;</span>], [<span class="s">&quot;beaming&quot;</span>, <span class="s">&quot;borderline&quot;</span>], [<span class="s">&quot;bedlamp&quot;</span>, <span class="s">&quot;bottomless&quot;</span>], [<span class="s">&quot;beehive&quot;</span>, <span class="s">&quot;Bradbury&quot;</span>], [<span class="s">&quot;beeswax&quot;</span>, <span class="s">&quot;bravado&quot;</span>], [<span class="s">&quot;befriend&quot;</span>, <span class="s">&quot;Brazilian&quot;</span>], [<span class="s">&quot;Belfast&quot;</span>, <span class="s">&quot;breakaway&quot;</span>], [<span class="s">&quot;berserk&quot;</span>, <span class="s">&quot;Burlington&quot;</span>], [<span class="s">&quot;billiard&quot;</span>, <span class="s">&quot;businessman&quot;</span>], [<span class="s">&quot;bison&quot;</span>, <span class="s">&quot;butterfat&quot;</span>], [<span class="s">&quot;blackjack&quot;</span>, <span class="s">&quot;Camelot&quot;</span>], [<span class="s">&quot;blockade&quot;</span>, <span class="s">&quot;candidate&quot;</span>], [<span class="s">&quot;blowtorch&quot;</span>, <span class="s">&quot;cannonball&quot;</span>], [<span class="s">&quot;bluebird&quot;</span>, <span class="s">&quot;Capricorn&quot;</span>], [<span class="s">&quot;bombast&quot;</span>, <span class="s">&quot;caravan&quot;</span>], [<span class="s">&quot;bookshelf&quot;</span>, <span class="s">&quot;caretaker&quot;</span>], [<span class="s">&quot;brackish&quot;</span>, <span class="s">&quot;celebrate&quot;</span>], [<span class="s">&quot;breadline&quot;</span>, <span class="s">&quot;cellulose&quot;</span>], [<span class="s">&quot;breakup&quot;</span>, <span class="s">&quot;certify&quot;</span>], [<span class="s">&quot;brickyard&quot;</span>, <span class="s">&quot;chambermaid&quot;</span>], [<span class="s">&quot;briefcase&quot;</span>, <span class="s">&quot;Cherokee&quot;</span>], [<span class="s">&quot;Burbank&quot;</span>, <span class="s">&quot;Chicago&quot;</span>], [<span class="s">&quot;button&quot;</span>, <span class="s">&quot;clergyman&quot;</span>], [<span class="s">&quot;buzzard&quot;</span>, <span class="s">&quot;coherence&quot;</span>], [<span class="s">&quot;cement&quot;</span>, <span class="s">&quot;combustion&quot;</span>], [<span class="s">&quot;chairlift&quot;</span>, <span class="s">&quot;commando&quot;</span>], [<span class="s">&quot;chatter&quot;</span>, <span class="s">&quot;company&quot;</span>], [<span class="s">&quot;checkup&quot;</span>, <span class="s">&quot;component&quot;</span>], [<span class="s">&quot;chisel&quot;</span>, <span class="s">&quot;concurrent&quot;</span>], [<span class="s">&quot;choking&quot;</span>, <span class="s">&quot;confidence&quot;</span>], [<span class="s">&quot;chopper&quot;</span>, <span class="s">&quot;conformist&quot;</span>], [<span class="s">&quot;Christmas&quot;</span>, <span class="s">&quot;congregate&quot;</span>], [<span class="s">&quot;clamshell&quot;</span>, <span class="s">&quot;consensus&quot;</span>], [<span class="s">&quot;classic&quot;</span>, <span class="s">&quot;consulting&quot;</span>], [<span class="s">&quot;classroom&quot;</span>, <span class="s">&quot;corporate&quot;</span>], [<span class="s">&quot;cleanup&quot;</span>, <span class="s">&quot;corrosion&quot;</span>], [<span class="s">&quot;clockwork&quot;</span>, <span class="s">&quot;councilman&quot;</span>], [<span class="s">&quot;cobra&quot;</span>, <span class="s">&quot;crossover&quot;</span>], [<span class="s">&quot;commence&quot;</span>, <span class="s">&quot;crucifix&quot;</span>], [<span class="s">&quot;concert&quot;</span>, <span class="s">&quot;cumbersome&quot;</span>], [<span class="s">&quot;cowbell&quot;</span>, <span class="s">&quot;customer&quot;</span>], [<span class="s">&quot;crackdown&quot;</span>, <span class="s">&quot;Dakota&quot;</span>], [<span class="s">&quot;cranky&quot;</span>, <span class="s">&quot;decadence&quot;</span>], [<span class="s">&quot;crowfoot&quot;</span>, <span class="s">&quot;December&quot;</span>], [<span class="s">&quot;crucial&quot;</span>, <span class="s">&quot;decimal&quot;</span>], [<span class="s">&quot;crumpled&quot;</span>, <span class="s">&quot;designing&quot;</span>], [<span class="s">&quot;crusade&quot;</span>, <span class="s">&quot;detector&quot;</span>], [<span class="s">&quot;cubic&quot;</span>, <span class="s">&quot;detergent&quot;</span>], [<span class="s">&quot;dashboard&quot;</span>, <span class="s">&quot;determine&quot;</span>], [<span class="s">&quot;deadbolt&quot;</span>, <span class="s">&quot;dictator&quot;</span>], [<span class="s">&quot;deckhand&quot;</span>, <span class="s">&quot;dinosaur&quot;</span>], [<span class="s">&quot;dogsled&quot;</span>, <span class="s">&quot;direction&quot;</span>], [<span class="s">&quot;dragnet&quot;</span>, <span class="s">&quot;disable&quot;</span>], [<span class="s">&quot;drainage&quot;</span>, <span class="s">&quot;disbelief&quot;</span>], [<span class="s">&quot;dreadful&quot;</span>, <span class="s">&quot;disruptive&quot;</span>], [<span class="s">&quot;drifter&quot;</span>, <span class="s">&quot;distortion&quot;</span>], [<span class="s">&quot;dropper&quot;</span>, <span class="s">&quot;document&quot;</span>], [<span class="s">&quot;drumbeat&quot;</span>, <span class="s">&quot;embezzle&quot;</span>], [<span class="s">&quot;drunken&quot;</span>, <span class="s">&quot;enchanting&quot;</span>], [<span class="s">&quot;Dupont&quot;</span>, <span class="s">&quot;enrollment&quot;</span>], [<span class="s">&quot;dwelling&quot;</span>, <span class="s">&quot;enterprise&quot;</span>], [<span class="s">&quot;eating&quot;</span>, <span class="s">&quot;equation&quot;</span>], [<span class="s">&quot;edict&quot;</span>, <span class="s">&quot;equipment&quot;</span>], [<span class="s">&quot;egghead&quot;</span>, <span class="s">&quot;escapade&quot;</span>], [<span class="s">&quot;eightball&quot;</span>, <span class="s">&quot;Eskimo&quot;</span>], [<span class="s">&quot;endorse&quot;</span>, <span class="s">&quot;everyday&quot;</span>], [<span class="s">&quot;endow&quot;</span>, <span class="s">&quot;examine&quot;</span>], [<span class="s">&quot;enlist&quot;</span>, <span class="s">&quot;existence&quot;</span>], [<span class="s">&quot;erase&quot;</span>, <span class="s">&quot;exodus&quot;</span>], [<span class="s">&quot;escape&quot;</span>, <span class="s">&quot;fascinate&quot;</span>], [<span class="s">&quot;exceed&quot;</span>, <span class="s">&quot;filament&quot;</span>], [<span class="s">&quot;eyeglass&quot;</span>, <span class="s">&quot;finicky&quot;</span>], [<span class="s">&quot;eyetooth&quot;</span>, <span class="s">&quot;forever&quot;</span>], [<span class="s">&quot;facial&quot;</span>, <span class="s">&quot;fortitude&quot;</span>], [<span class="s">&quot;fallout&quot;</span>, <span class="s">&quot;frequency&quot;</span>], [<span class="s">&quot;flagpole&quot;</span>, <span class="s">&quot;gadgetry&quot;</span>], [<span class="s">&quot;flatfoot&quot;</span>, <span class="s">&quot;Galveston&quot;</span>], [<span class="s">&quot;flytrap&quot;</span>, <span class="s">&quot;getaway&quot;</span>], [<span class="s">&quot;fracture&quot;</span>, <span class="s">&quot;glossary&quot;</span>], [<span class="s">&quot;framework&quot;</span>, <span class="s">&quot;gossamer&quot;</span>], [<span class="s">&quot;freedom&quot;</span>, <span class="s">&quot;graduate&quot;</span>], [<span class="s">&quot;frighten&quot;</span>, <span class="s">&quot;gravity&quot;</span>], [<span class="s">&quot;gazelle&quot;</span>, <span class="s">&quot;guitarist&quot;</span>], [<span class="s">&quot;Geiger&quot;</span>, <span class="s">&quot;hamburger&quot;</span>], [<span class="s">&quot;glitter&quot;</span>, <span class="s">&quot;Hamilton&quot;</span>], [<span class="s">&quot;glucose&quot;</span>, <span class="s">&quot;handiwork&quot;</span>], [<span class="s">&quot;goggles&quot;</span>, <span class="s">&quot;hazardous&quot;</span>], [<span class="s">&quot;goldfish&quot;</span>, <span class="s">&quot;headwaters&quot;</span>], [<span class="s">&quot;gremlin&quot;</span>, <span class="s">&quot;hemisphere&quot;</span>], [<span class="s">&quot;guidance&quot;</span>, <span class="s">&quot;hesitate&quot;</span>], [<span class="s">&quot;hamlet&quot;</span>, <span class="s">&quot;hideaway&quot;</span>], [<span class="s">&quot;highchair&quot;</span>, <span class="s">&quot;holiness&quot;</span>], [<span class="s">&quot;hockey&quot;</span>, <span class="s">&quot;hurricane&quot;</span>], [<span class="s">&quot;indoors&quot;</span>, <span class="s">&quot;hydraulic&quot;</span>], [<span class="s">&quot;indulge&quot;</span>, <span class="s">&quot;impartial&quot;</span>], [<span class="s">&quot;inverse&quot;</span>, <span class="s">&quot;impetus&quot;</span>], [<span class="s">&quot;involve&quot;</span>, <span class="s">&quot;inception&quot;</span>], [<span class="s">&quot;island&quot;</span>, <span class="s">&quot;indigo&quot;</span>], [<span class="s">&quot;jawbone&quot;</span>, <span class="s">&quot;inertia&quot;</span>], [<span class="s">&quot;keyboard&quot;</span>, <span class="s">&quot;infancy&quot;</span>], [<span class="s">&quot;kickoff&quot;</span>, <span class="s">&quot;inferno&quot;</span>], [<span class="s">&quot;kiwi&quot;</span>, <span class="s">&quot;informant&quot;</span>], [<span class="s">&quot;klaxon&quot;</span>, <span class="s">&quot;insincere&quot;</span>], [<span class="s">&quot;locale&quot;</span>, <span class="s">&quot;insurgent&quot;</span>], [<span class="s">&quot;lockup&quot;</span>, <span class="s">&quot;integrate&quot;</span>], [<span class="s">&quot;merit&quot;</span>, <span class="s">&quot;intention&quot;</span>], [<span class="s">&quot;minnow&quot;</span>, <span class="s">&quot;inventive&quot;</span>], [<span class="s">&quot;miser&quot;</span>, <span class="s">&quot;Istanbul&quot;</span>], [<span class="s">&quot;Mohawk&quot;</span>, <span class="s">&quot;Jamaica&quot;</span>], [<span class="s">&quot;mural&quot;</span>, <span class="s">&quot;Jupiter&quot;</span>], [<span class="s">&quot;music&quot;</span>, <span class="s">&quot;leprosy&quot;</span>], [<span class="s">&quot;necklace&quot;</span>, <span class="s">&quot;letterhead&quot;</span>], [<span class="s">&quot;Neptune&quot;</span>, <span class="s">&quot;liberty&quot;</span>], [<span class="s">&quot;newborn&quot;</span>, <span class="s">&quot;maritime&quot;</span>], [<span class="s">&quot;nightbird&quot;</span>, <span class="s">&quot;matchmaker&quot;</span>], [<span class="s">&quot;Oakland&quot;</span>, <span class="s">&quot;maverick&quot;</span>], [<span class="s">&quot;obtuse&quot;</span>, <span class="s">&quot;Medusa&quot;</span>], [<span class="s">&quot;offload&quot;</span>, <span class="s">&quot;megaton&quot;</span>], [<span class="s">&quot;optic&quot;</span>, <span class="s">&quot;microscope&quot;</span>], [<span class="s">&quot;orca&quot;</span>, <span class="s">&quot;microwave&quot;</span>], [<span class="s">&quot;payday&quot;</span>, <span class="s">&quot;midsummer&quot;</span>], [<span class="s">&quot;peachy&quot;</span>, <span class="s">&quot;millionaire&quot;</span>], [<span class="s">&quot;pheasant&quot;</span>, <span class="s">&quot;miracle&quot;</span>], [<span class="s">&quot;physique&quot;</span>, <span class="s">&quot;misnomer&quot;</span>], [<span class="s">&quot;playhouse&quot;</span>, <span class="s">&quot;molasses&quot;</span>], [<span class="s">&quot;Pluto&quot;</span>, <span class="s">&quot;molecule&quot;</span>], [<span class="s">&quot;preclude&quot;</span>, <span class="s">&quot;Montana&quot;</span>], [<span class="s">&quot;prefer&quot;</span>, <span class="s">&quot;monument&quot;</span>], [<span class="s">&quot;preshrunk&quot;</span>, <span class="s">&quot;mosquito&quot;</span>], [<span class="s">&quot;printer&quot;</span>, <span class="s">&quot;narrative&quot;</span>], [<span class="s">&quot;prowler&quot;</span>, <span class="s">&quot;nebula&quot;</span>], [<span class="s">&quot;pupil&quot;</span>, <span class="s">&quot;newsletter&quot;</span>], [<span class="s">&quot;puppy&quot;</span>, <span class="s">&quot;Norwegian&quot;</span>], [<span class="s">&quot;python&quot;</span>, <span class="s">&quot;October&quot;</span>], [<span class="s">&quot;quadrant&quot;</span>, <span class="s">&quot;Ohio&quot;</span>], [<span class="s">&quot;quiver&quot;</span>, <span class="s">&quot;onlooker&quot;</span>], [<span class="s">&quot;quota&quot;</span>, <span class="s">&quot;opulent&quot;</span>], [<span class="s">&quot;ragtime&quot;</span>, <span class="s">&quot;Orlando&quot;</span>], [<span class="s">&quot;ratchet&quot;</span>, <span class="s">&quot;outfielder&quot;</span>], [<span class="s">&quot;rebirth&quot;</span>, <span class="s">&quot;Pacific&quot;</span>], [<span class="s">&quot;reform&quot;</span>, <span class="s">&quot;pandemic&quot;</span>], [<span class="s">&quot;regain&quot;</span>, <span class="s">&quot;Pandora&quot;</span>], [<span class="s">&quot;reindeer&quot;</span>, <span class="s">&quot;paperweight&quot;</span>], [<span class="s">&quot;rematch&quot;</span>, <span class="s">&quot;paragon&quot;</span>], [<span class="s">&quot;repay&quot;</span>, <span class="s">&quot;paragraph&quot;</span>], [<span class="s">&quot;retouch&quot;</span>, <span class="s">&quot;paramount&quot;</span>], [<span class="s">&quot;revenge&quot;</span>, <span class="s">&quot;passenger&quot;</span>], [<span class="s">&quot;reward&quot;</span>, <span class="s">&quot;pedigree&quot;</span>], [<span class="s">&quot;rhythm&quot;</span>, <span class="s">&quot;Pegasus&quot;</span>], [<span class="s">&quot;ribcage&quot;</span>, <span class="s">&quot;penetrate&quot;</span>], [<span class="s">&quot;ringbolt&quot;</span>, <span class="s">&quot;perceptive&quot;</span>], [<span class="s">&quot;robust&quot;</span>, <span class="s">&quot;performance&quot;</span>], [<span class="s">&quot;rocker&quot;</span>, <span class="s">&quot;pharmacy&quot;</span>], [<span class="s">&quot;ruffled&quot;</span>, <span class="s">&quot;phonetic&quot;</span>], [<span class="s">&quot;sailboat&quot;</span>, <span class="s">&quot;photograph&quot;</span>], [<span class="s">&quot;sawdust&quot;</span>, <span class="s">&quot;pioneer&quot;</span>], [<span class="s">&quot;scallion&quot;</span>, <span class="s">&quot;pocketful&quot;</span>], [<span class="s">&quot;scenic&quot;</span>, <span class="s">&quot;politeness&quot;</span>], [<span class="s">&quot;scorecard&quot;</span>, <span class="s">&quot;positive&quot;</span>], [<span class="s">&quot;Scotland&quot;</span>, <span class="s">&quot;potato&quot;</span>], [<span class="s">&quot;seabird&quot;</span>, <span class="s">&quot;processor&quot;</span>], [<span class="s">&quot;select&quot;</span>, <span class="s">&quot;provincial&quot;</span>], [<span class="s">&quot;sentence&quot;</span>, <span class="s">&quot;proximate&quot;</span>], [<span class="s">&quot;shadow&quot;</span>, <span class="s">&quot;puberty&quot;</span>], [<span class="s">&quot;shamrock&quot;</span>, <span class="s">&quot;publisher&quot;</span>], [<span class="s">&quot;showgirl&quot;</span>, <span class="s">&quot;pyramid&quot;</span>], [<span class="s">&quot;skullcap&quot;</span>, <span class="s">&quot;quantity&quot;</span>], [<span class="s">&quot;skydive&quot;</span>, <span class="s">&quot;racketeer&quot;</span>], [<span class="s">&quot;slingshot&quot;</span>, <span class="s">&quot;rebellion&quot;</span>], [<span class="s">&quot;slowdown&quot;</span>, <span class="s">&quot;recipe&quot;</span>], [<span class="s">&quot;snapline&quot;</span>, <span class="s">&quot;recover&quot;</span>], [<span class="s">&quot;snapshot&quot;</span>, <span class="s">&quot;repellent&quot;</span>], [<span class="s">&quot;snowcap&quot;</span>, <span class="s">&quot;replica&quot;</span>], [<span class="s">&quot;snowslide&quot;</span>, <span class="s">&quot;reproduce&quot;</span>], [<span class="s">&quot;solo&quot;</span>, <span class="s">&quot;resistor&quot;</span>], [<span class="s">&quot;southward&quot;</span>, <span class="s">&quot;responsive&quot;</span>], [<span class="s">&quot;soybean&quot;</span>, <span class="s">&quot;retraction&quot;</span>], [<span class="s">&quot;spaniel&quot;</span>, <span class="s">&quot;retrieval&quot;</span>], [<span class="s">&quot;spearhead&quot;</span>, <span class="s">&quot;retrospect&quot;</span>], [<span class="s">&quot;spellbind&quot;</span>, <span class="s">&quot;revenue&quot;</span>], [<span class="s">&quot;spheroid&quot;</span>, <span class="s">&quot;revival&quot;</span>], [<span class="s">&quot;spigot&quot;</span>, <span class="s">&quot;revolver&quot;</span>], [<span class="s">&quot;spindle&quot;</span>, <span class="s">&quot;sandalwood&quot;</span>], [<span class="s">&quot;spyglass&quot;</span>, <span class="s">&quot;sardonic&quot;</span>], [<span class="s">&quot;stagehand&quot;</span>, <span class="s">&quot;Saturday&quot;</span>], [<span class="s">&quot;stagnate&quot;</span>, <span class="s">&quot;savagery&quot;</span>], [<span class="s">&quot;stairway&quot;</span>, <span class="s">&quot;scavenger&quot;</span>], [<span class="s">&quot;standard&quot;</span>, <span class="s">&quot;sensation&quot;</span>], [<span class="s">&quot;stapler&quot;</span>, <span class="s">&quot;sociable&quot;</span>], [<span class="s">&quot;steamship&quot;</span>, <span class="s">&quot;souvenir&quot;</span>], [<span class="s">&quot;sterling&quot;</span>, <span class="s">&quot;specialist&quot;</span>], [<span class="s">&quot;stockman&quot;</span>, <span class="s">&quot;speculate&quot;</span>], [<span class="s">&quot;stopwatch&quot;</span>, <span class="s">&quot;stethoscope&quot;</span>], [<span class="s">&quot;stormy&quot;</span>, <span class="s">&quot;stupendous&quot;</span>], [<span class="s">&quot;sugar&quot;</span>, <span class="s">&quot;supportive&quot;</span>], [<span class="s">&quot;surmount&quot;</span>, <span class="s">&quot;surrender&quot;</span>], [<span class="s">&quot;suspense&quot;</span>, <span class="s">&quot;suspicious&quot;</span>], [<span class="s">&quot;sweatband&quot;</span>, <span class="s">&quot;sympathy&quot;</span>], [<span class="s">&quot;swelter&quot;</span>, <span class="s">&quot;tambourine&quot;</span>], [<span class="s">&quot;tactics&quot;</span>, <span class="s">&quot;telephone&quot;</span>], [<span class="s">&quot;talon&quot;</span>, <span class="s">&quot;therapist&quot;</span>], [<span class="s">&quot;tapeworm&quot;</span>, <span class="s">&quot;tobacco&quot;</span>], [<span class="s">&quot;tempest&quot;</span>, <span class="s">&quot;tolerance&quot;</span>], [<span class="s">&quot;tiger&quot;</span>, <span class="s">&quot;tomorrow&quot;</span>], [<span class="s">&quot;tissue&quot;</span>, <span class="s">&quot;torpedo&quot;</span>], [<span class="s">&quot;tonic&quot;</span>, <span class="s">&quot;tradition&quot;</span>], [<span class="s">&quot;topmost&quot;</span>, <span class="s">&quot;travesty&quot;</span>], [<span class="s">&quot;tracker&quot;</span>, <span class="s">&quot;trombonist&quot;</span>], [<span class="s">&quot;transit&quot;</span>, <span class="s">&quot;truncated&quot;</span>], [<span class="s">&quot;trauma&quot;</span>, <span class="s">&quot;typewriter&quot;</span>], [<span class="s">&quot;treadmill&quot;</span>, <span class="s">&quot;ultimate&quot;</span>], [<span class="s">&quot;Trojan&quot;</span>, <span class="s">&quot;undaunted&quot;</span>], [<span class="s">&quot;trouble&quot;</span>, <span class="s">&quot;underfoot&quot;</span>], [<span class="s">&quot;tumor&quot;</span>, <span class="s">&quot;unicorn&quot;</span>], [<span class="s">&quot;tunnel&quot;</span>, <span class="s">&quot;unify&quot;</span>], [<span class="s">&quot;tycoon&quot;</span>, <span class="s">&quot;universe&quot;</span>], [<span class="s">&quot;uncut&quot;</span>, <span class="s">&quot;unravel&quot;</span>], [<span class="s">&quot;unearth&quot;</span>, <span class="s">&quot;upcoming&quot;</span>], [<span class="s">&quot;unwind&quot;</span>, <span class="s">&quot;vacancy&quot;</span>], [<span class="s">&quot;uproot&quot;</span>, <span class="s">&quot;vagabond&quot;</span>], [<span class="s">&quot;upset&quot;</span>, <span class="s">&quot;vertigo&quot;</span>], [<span class="s">&quot;upshot&quot;</span>, <span class="s">&quot;Virginia&quot;</span>], [<span class="s">&quot;vapor&quot;</span>, <span class="s">&quot;visitor&quot;</span>], [<span class="s">&quot;village&quot;</span>, <span class="s">&quot;vocalist&quot;</span>], [<span class="s">&quot;virus&quot;</span>, <span class="s">&quot;voyager&quot;</span>], [<span class="s">&quot;Vulcan&quot;</span>, <span class="s">&quot;warranty&quot;</span>], [<span class="s">&quot;waffle&quot;</span>, <span class="s">&quot;Waterloo&quot;</span>], [<span class="s">&quot;wallet&quot;</span>, <span class="s">&quot;whimsical&quot;</span>], [<span class="s">&quot;watchword&quot;</span>, <span class="s">&quot;Wichita&quot;</span>], [<span class="s">&quot;wayside&quot;</span>, <span class="s">&quot;Wilmington&quot;</span>], [<span class="s">&quot;willow&quot;</span>, <span class="s">&quot;Wyoming&quot;</span>], [<span class="s">&quot;woodlark&quot;</span>, <span class="s">&quot;yesteryear&quot;</span>], [<span class="s">&quot;Zulu&quot;</span>, <span class="s">&quot;Yucatan&quot;</span>]]</code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The list of (even, odd) words for each byte.</p>
+      </dd>
+      
+    
+  </dl>
+
+
+
+
+
+  <h2>
+    <a id="class-method-summary" class="anchor" href="#class-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#each_word(bytes:Enumerable(UInt8),&)-class-method" class="signature"><strong>.each_word</strong>(bytes : Enumerable(UInt8), &)</a>
+        
+          <div class="summary"><p>Yields the English word corresponding to each byte in <em>bytes</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#each_word(string:String,&)-class-method" class="signature"><strong>.each_word</strong>(string : String, &)</a>
+        
+          <div class="summary"><p>Yields the English word corresponding to each hex byte in <em>string</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#from_bytes(bytes:Enumerable(UInt8))-class-method" class="signature"><strong>.from_bytes</strong>(bytes : Enumerable(UInt8))</a>
+        
+          <div class="summary"><p>Returns an English word string corresponding to the given enumerable of <em>bytes</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#from_hexstring(string)-class-method" class="signature"><strong>.from_hexstring</strong>(string)</a>
+        
+          <div class="summary"><p>Returns an English word string corresponding to the given hex bytes in <em>string</em>.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+
+
+<div class="methods-inherited">
+  
+</div>
+
+
+
+
+  <h2>
+    <a id="class-method-detail" class="anchor" href="#class-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="each_word(bytes:Enumerable(UInt8),&amp;)-class-method">
+      <div class="signature">
+        
+        def self.<strong>each_word</strong>(bytes : Enumerable(UInt8), &)
+
+        <a class="method-permalink" href="#each_word(bytes:Enumerable(UInt8),&)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Yields the English word corresponding to each byte in <em>bytes</em>.</p>
+
+<pre><code><span class="t">PGP</span><span class="t">::</span><span class="t">Wordlist</span>.each_word(<span class="s">&quot;hello&quot;</span>.to_slice) <span class="k">do</span> <span class="o">|</span>word<span class="o">|</span>
+  puts word
+<span class="k">end</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/woodruffw/pgp-wordlist.cr/blob/51a13fa33702d29d3b8e606d7eb80b396ea06f07/src/pgp-wordlist.cr#L315" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="each_word(string:String,&amp;)-class-method">
+      <div class="signature">
+        
+        def self.<strong>each_word</strong>(string : String, &)
+
+        <a class="method-permalink" href="#each_word(string:String,&)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Yields the English word corresponding to each hex byte in <em>string</em>.</p>
+
+<pre><code><span class="t">PGP</span><span class="t">::</span><span class="t">Wordlist</span>.each_word(<span class="s">&quot;feed face&quot;</span>) <span class="k">do</span> <span class="o">|</span>word<span class="o">|</span>
+  puts word
+<span class="k">end</span></code></pre>
+
+<p><span class="flag purple">NOTE</span>  The difference between this and <code><a href="../PGP/Wordlist.html#each_word(bytes:Enumerable(UInt8),&)-class-method">.each_word(bytes)</a></code> is that this parses hexadecimal digits:
+<code>"01"</code> becomes <code>0x01</code>, not <code>[0x30, 0x31]</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/woodruffw/pgp-wordlist.cr/blob/51a13fa33702d29d3b8e606d7eb80b396ea06f07/src/pgp-wordlist.cr#L331" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="from_bytes(bytes:Enumerable(UInt8))-class-method">
+      <div class="signature">
+        
+        def self.<strong>from_bytes</strong>(bytes : Enumerable(UInt8))
+
+        <a class="method-permalink" href="#from_bytes(bytes:Enumerable(UInt8))-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns an English word string corresponding to the given enumerable of <em>bytes</em>.</p>
+
+<pre><code><span class="t">PGP</span><span class="t">::</span><span class="t">Wordlist</span>.from_bytes <span class="s">&quot;hello&quot;</span>.to_slice
+<span class="t">PGP</span><span class="t">::</span><span class="t">Wordlist</span>.from_bytes [<span class="n">1_u8</span>, <span class="n">2_u8</span>, <span class="n">3_u8</span>]</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/woodruffw/pgp-wordlist.cr/blob/51a13fa33702d29d3b8e606d7eb80b396ea06f07/src/pgp-wordlist.cr#L297" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="from_hexstring(string)-class-method">
+      <div class="signature">
+        
+        def self.<strong>from_hexstring</strong>(string)
+
+        <a class="method-permalink" href="#from_hexstring(string)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns an English word string corresponding to the given hex bytes in <em>string</em>.</p>
+
+<p>All whitespace is stripped from the string before processing.</p>
+
+<pre><code><span class="t">PGP</span><span class="t">::</span><span class="t">Wordlist</span>.from_hexstring <span class="s">&lt;&lt;-MESSAGE
+ E582 94F2 E9A2 2748 6E8B
+ 061B 31CC 528F D7FA 3F19
+MESSAGE</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/woodruffw/pgp-wordlist.cr/blob/51a13fa33702d29d3b8e606d7eb80b396ea06f07/src/pgp-wordlist.cr#L286" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+
+</div>
+
+</body>
+</html>
